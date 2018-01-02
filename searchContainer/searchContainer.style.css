@@ -8,10 +8,20 @@
     flex-grow: 1;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 0;
+}
+
+.SearchContainer .no-results {
+    line-height: 50px;
+    font-size: 30px;
 }
 
 .SearchContainer li {
     cursor: pointer;
+}
+
+.SearchContainer .title-track {
+    line-height: 50px;
 }
 
 .SearchContainer .searchTile, .SearchContainer .searchList {

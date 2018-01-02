@@ -3,13 +3,14 @@ angular.module("musicPlayerModule").component("trackContainer", {
     controller: trackContainerController
 });
 
-function trackContainerController(trackService, $timeout, soundCloudFactory) {
+function trackContainerController($scope, trackService, $timeout, soundCloudFactory) {
 
     this.newTrack;
     this.placeholderAlbum = "https://djazz.se/apps/eqbeats/img/album-placeholder.png";
     this.timeoutSwitch = 2500;
     this.player;
     this.isPlaying = false;
+    this.unsubscribeFinish;
 
     this.$onInit = function() {
         trackService.addTrackListeners(this.addNewTrack.bind(this));
@@ -19,10 +20,10 @@ function trackContainerController(trackService, $timeout, soundCloudFactory) {
 
     this.togglePlaySong = function($event) {
         var target = $event.target;
-        if(target.tagName !== "IMG") {
+        if (target.tagName !== "IMG") {
             return;
         }
-        
+
         if (this.player.isPlaying()) {
             this.player.pause();
             this.isPlaying = false;
@@ -41,6 +42,15 @@ function trackContainerController(trackService, $timeout, soundCloudFactory) {
 
         this.SC.streamMusic(newTrack.id).then(function(player) {
             this.player = player;
+
+            if (this.unsubscribeFinish !== undefined) {
+                this.unsubscribeFinish.off('finish')
+            }
+
+            this.unsubscribeFinish = this.player.on('finish', function() {
+                this.isPlaying = false;
+                $scope.$apply();
+            }.bind(this))
         }.bind(this))
 
         // fix to cause animation to stop (with causing the page to reflow)

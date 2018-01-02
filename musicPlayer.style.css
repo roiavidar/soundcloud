@@ -27,6 +27,7 @@ music-player {
     flex-grow: 4;
 }
 
-.MusicPlayer h1 {
+music-player h1 {
     margin: 0;
+    border-bottom: 4px solid white;
 }

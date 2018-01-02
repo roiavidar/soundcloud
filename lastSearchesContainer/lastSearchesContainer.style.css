@@ -1,3 +1,21 @@
 .LastSearchesContainer li {
     cursor: pointer;
+    line-height: 50px;
+}
+
+.LastSearchesContainer .lastSearchesHeader {
+    position: relative;
+    padding-left: 30px;
+}
+
+.LastSearchesContainer .lastSearchesHeader:before {
+    content: '';
+    background: url(http://www.iconhot.com/icon/png/token/256/search-89.png);
+    height: 25px;
+    width: 25px;
+    display: block;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    top: -4px;
 }

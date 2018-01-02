@@ -5,10 +5,10 @@
     </div>
     <ul>
         <li ng-repeat="track in $ctrl.tracks" ng-click="$ctrl.triggerTrackSelection(track)">
-            <span ng-if="track['artwork_url'] === null || !$ctrl.isImg">{{track.title}}</span>
+            <span class="title-track" ng-if="track['artwork_url'] === null || !$ctrl.isImg">{{track.title}}</span>
             <img ng-if="$ctrl.isImg && track['artwork_url'] !== null" ng-src="{{track['artwork_url']}}" width=100 height=100></img>
         </li>
-        <li ng-show="$ctrl.tracks.length === 0">
+        <li class="no-results" ng-show="$ctrl.tracks.length === 0">
             no results found
         </li>
     </ul>

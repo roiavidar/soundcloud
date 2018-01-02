@@ -7,4 +7,24 @@ body {
     margin: 0;
     box-sizing: border-box;
     padding: 10px;
+    background-color: #7681D8;
+    color: white;
+    font-family: arial;
+}
+
+
+ul li {
+    border-bottom: 2px dotted white;
+    margin: 2px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 3px 19px;
 }
