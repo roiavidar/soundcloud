@@ -5,7 +5,7 @@ angular.module("musicPlayerModule").component("searchContainer", {
 
 function SearchContainerController($scope, soundCloudFactory, searchesService, historyService, trackService) {
 
-    this.tracks = [];
+    this.tracks;
     this.SC;
     this.isImg = false;
     this.searchQuery = "";
