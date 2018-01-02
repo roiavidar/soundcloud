@@ -1,0 +1,25 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
+  "main": "index.js",
+    "dependencies": {
+    "angular": "^1.6.8"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "start": "http-server -a 127.0.0.1 -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roiavidar/soundcloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roiavidar/soundcloud/issues"
+  },
+  "homepage": "https://github.com/roiavidar/soundcloud#readme"
+}
