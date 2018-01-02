@@ -13,7 +13,7 @@ function SearchContainerController($scope, soundCloudFactory, searchesService, h
 
     this.$onInit = function() {
         this.SC = soundCloudFactory({ limit: 6, linked_partitioning: 1 });
-        this.isImg = !!window.localStorage.getItem('isImg') || false;
+        this.isImg = JSON.parse(window.localStorage.getItem('isImg')) || false;
         historyService.addHistorySearchListeners(this.historySearchRequest.bind(this));
     }
 
