@@ -6,7 +6,7 @@ angular.module("musicPlayerModule").component("trackContainer", {
 function trackContainerController($scope, trackService, $timeout, soundCloudFactory) {
 
     this.newTrack;
-    this.placeholderAlbum = "https://djazz.se/apps/eqbeats/img/album-placeholder.png";
+    this.placeholderAlbum = "http://virginradio.co.uk/sites/virginradio.co.uk/files/song_cover/20160516/coverart_0.png";
     this.timeoutSwitch = 2500;
     this.player;
     this.isPlaying = false;
