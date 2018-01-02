@@ -1,0 +1,68 @@
+.TrackContainer {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.TrackContainer .image-container-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.TrackContainer .new-track {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    bottom: 0;
+    z-index: 0;
+}
+
+.TrackContainer .is-playing {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    font-size: 16px;
+}
+
+.TrackContainer .fly-in {
+    animation: FLY-IN 3s;
+}
+
+.TrackContainer .fade-out-with-delay {
+    animation: FLY-OUT-WITH-DELAY 3s;
+}
+
+@keyframes FLY-OUT-WITH-DELAY {
+    51% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes FLY-IN {
+    50% {
+        transform: translate(-50%, 50%);
+        bottom: 50%;
+        opacity: 1;
+        z-index: 0;
+    }
+    51% {
+        opacity: 0;
+    }
+    52% {
+        z-index: 20;
+    }
+    100% {
+        opacity: 1;
+        z-index: 20;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+    }
+}

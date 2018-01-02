@@ -1,0 +1,7 @@
+<div class="TrackContainer" ng-click="$ctrl.togglePlaySong($event)">
+    <img ng-class="{ 'fly-in': $ctrl.isNewTrack }" class="new-track" ng-src="{{$ctrl.newTrack['artwork_url']}}" width=300 height=300 />
+    <div class="image-container-center">
+        <img ng-class="{ 'fade-out-with-delay': $ctrl.isNewTrack }" class="current-track" ng-src="{{$ctrl.currentTrack['artwork_url']}}" width=300 height=300 />
+        <div class="is-playing" ng-show="$ctrl.isPlaying">Playing...</div>
+    </div>
+</div>

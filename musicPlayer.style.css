@@ -1,0 +1,32 @@
+music-player {
+    max-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.MusicPlayer {
+    display: flex;
+    padding: 10px;
+    min-width: 900px;
+    box-sizing: border-box;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.MusicPlayer > search-container {
+    width: 25%;
+    flex-shrink: 1;
+}
+
+.MusicPlayer > last-searches-container {
+    flex-grow: 1;
+}
+
+.MusicPlayer track-container {
+    flex-grow: 4;
+}
+
+.MusicPlayer h1 {
+    margin: 0;
+}

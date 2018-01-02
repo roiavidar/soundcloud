@@ -1,0 +1,8 @@
+<div class="LastSearchesContainer">
+    <div>Last Searches Container:</div>
+    <ul>
+        <li ng-repeat="searchItem in $ctrl.searchItems track by $index" ng-click="$ctrl.triggerHistorySearch(searchItem)">
+            {{searchItem}}
+        </li>
+    </ul>
+</div>

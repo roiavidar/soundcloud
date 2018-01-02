@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="musicPlayerModule">
+
+<head>
+	<meta charset="utf-8">
+	<title>Music Player</title>
+	<link rel="stylesheet" href="trackContainer/trackContainer.style.css" type="text/css" />
+	<link rel="stylesheet" href="musicPlayer.style.css" type="text/css" />
+	<link rel="stylesheet" href="searchContainer/searchContainer.style.css" type="text/css" />
+	<link rel="stylesheet" href="lastSearchesContainer/lastSearchesContainer.style.css" type="text/css" />
+	<link rel="stylesheet" href="globalstyles.css" type="text/css" />
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		SC.initialize({
+			client_id: 'ggX0UomnLs0VmW7qZnCzw',
+		});
+	</script>
+
+	<music-player></music-player>
+	<script type="text/javascript" src="services/soundCloud.service.js"></script>
+	<script type="text/javascript" src="services/searches.service.js"></script>
+	<script type="text/javascript" src="services/history.service.js"></script>
+	<script type="text/javascript" src="services/track.service.js"></script>
+	<script type="text/javascript" src="musicPlayer.component.js"></script>
+	<script type="text/javascript" src="searchContainer/searchContainer.component.js"></script>
+	<script type="text/javascript" src="lastSearchesContainer/lastSearchesContainer.component.js"></script>
+	<script type="text/javascript" src="trackContainer/trackContainer.component.js"></script>
+</body>
+
+</html>

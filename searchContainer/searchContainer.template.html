@@ -1,0 +1,17 @@
+<div class="SearchContainer">
+    <div>
+        <input ng-keyup="$ctrl.triggerSearchOnEnter($event)" type="text" name="search" ng-model="$ctrl.searchQuery" placeholder="Type Your Search..." />
+        <button ng-click="$ctrl.newSearchTracks($ctrl.searchQuery)">Go</button>
+    </div>
+    <ul>
+        <li ng-repeat="track in $ctrl.tracks" ng-click="$ctrl.triggerTrackSelection(track)">
+            <span ng-if="track['artwork_url'] === null || !$ctrl.isImg">{{track.title}}</span>
+            <img ng-if="$ctrl.isImg && track['artwork_url'] !== null" ng-src="{{track['artwork_url']}}" width=100 height=100></img>
+        </li>
+    </ul>
+    <div>
+        <button ng-show="$ctrl.nextTracks !== null && $ctrl.isSearched" ng-click="$ctrl.fetchNextTracks($ctrl.nextTracks)">Next</button>
+        <button class="searchList" ng-click="$ctrl.onListViewClicked(false)">List</button>
+        <button class="searchTile" ng-click="$ctrl.onListViewClicked(true)">Tile</button>
+    </div>
+</div>
