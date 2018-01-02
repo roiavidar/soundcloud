@@ -20,6 +20,10 @@
     cursor: pointer;
 }
 
+.SearchContainer input {
+    font-size: 14px;
+}
+
 .SearchContainer .title-track {
     line-height: 50px;
 }
