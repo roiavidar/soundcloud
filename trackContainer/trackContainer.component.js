@@ -36,6 +36,7 @@ function trackContainerController($scope, trackService, $timeout, soundCloudFact
 
     this.addNewTrack = function(newTrack) {
         newTrack = angular.copy(newTrack);
+        
         this.isNewTrack = false;
         this.isPlaying = false;
         this.player && this.player.pause();
@@ -66,6 +67,8 @@ function trackContainerController($scope, trackService, $timeout, soundCloudFact
         $timeout(function() {
             if (newTrack["artwork_url"] === null) {
                 newTrack["artwork_url"] = this.placeholderAlbum;
+            } else {
+                newTrack.artwork_url = newTrack.artwork_url.replace('large.jpg', 't500x500.jpg');
             }
             this.newTrack = newTrack;
             this.isNewTrack = true;
