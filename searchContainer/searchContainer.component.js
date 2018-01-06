@@ -21,9 +21,9 @@ function SearchContainerController($scope, soundCloudFactory, searchesService, h
         this.searchQuery = searchRequest;
         this.searchTracks(searchRequest);
     }
-    
+
     this.triggerSearchOnEnter = function($event) {
-        if($event.keyCode == 13) {
+        if ($event.keyCode == 13) {
             this.newSearchTracks(this.searchQuery);
         }
     }
@@ -37,6 +37,9 @@ function SearchContainerController($scope, soundCloudFactory, searchesService, h
         return this.SC.search(query).then(function(result) {
             $scope.$apply(function() {
                 this.tracks = result.collection;
+
+                setImagesToBetterQuality(this.tracks);
+
                 this.nextTracks = result["next_href"];
             }.bind(this));
         }.bind(this))
@@ -44,8 +47,8 @@ function SearchContainerController($scope, soundCloudFactory, searchesService, h
 
     this.newSearchTracks = function(query) {
         this.searchTracks(query);
-        if(query !== "") {
-            searchesService.addNewSearch(this.searchQuery);   
+        if (query !== "") {
+            searchesService.addNewSearch(this.searchQuery);
         }
     }
 
@@ -53,7 +56,16 @@ function SearchContainerController($scope, soundCloudFactory, searchesService, h
         this.SC.nextTracks(uri).then(function(result) {
             this.tracks = result.data.collection;
             this.nextTracks = result.data["next_href"];
+
+            setImagesToBetterQuality(this.tracks);
         }.bind(this));
+    }
+
+
+    function setImagesToBetterQuality(tracks) {
+        tracks.forEach(function(tempTrack) {
+            tempTrack.artwork_url = tempTrack.artwork_url && tempTrack.artwork_url.replace('large.jpg', 't500x500.jpg');
+        });
     }
 
     this.onListViewClicked = function(isImg) {
